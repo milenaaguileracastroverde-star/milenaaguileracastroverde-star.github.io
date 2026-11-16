@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Milena Aguilera Castroverde · Project Manager | Data Analyst | Marketing &amp; Business</title>
+<meta name="description" content="CV interactivo de Milena Aguilera Castroverde — Analista de Datos e IA">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  /* =========================================================
+     PALETA  ·  Azul medianoche + índigo + coral
+     - Índigo: confianza, tecnología, datos (CRM / BI)
+     - Coral:  energía y creatividad (marketing / comunicación)
+     Cambia los colores aquí.
+     ========================================================= */
+  :root{
+    --accent:#4f46e5;          /* índigo */
+    --accent-2:#ff6b4a;        /* coral */
+    --accent-soft:#eef0ff;
+    --navy:#0f172a;
+    --bg:#f7f8fc; --surface:#ffffff; --ink:#0f172a; --muted:#5b6478; --line:#e6e8f0;
+    --shadow:0 1px 2px rgba(15,23,42,.04),0 10px 30px rgba(15,23,42,.06);
+    --radius:18px;
+    --head:'Plus Jakarta Sans',system-ui,sans-serif; --sans:'Inter',system-ui,sans-serif; --mono:'JetBrains Mono',monospace;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --accent:#8b8cff; --accent-2:#ff8a6b; --accent-soft:#1d1f3d;
+      --bg:#0b1020; --surface:#121933; --ink:#e8ebf5; --muted:#9aa3bd; --line:#222b4a;
+      --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --accent:#8b8cff; --accent-2:#ff8a6b; --accent-soft:#1d1f3d;
+    --bg:#0b1020; --surface:#121933; --ink:#e8ebf5; --muted:#9aa3bd; --line:#222b4a;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.65;font-size:16px;transition:background .3s,color .3s;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  .grad{background:linear-gradient(100deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+
+  /* Barra superior */
+  .topbar{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 80%,transparent);backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid var(--line)}
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+  .brand{font-family:var(--head);font-weight:800;font-size:1.15rem;text-decoration:none;display:flex;align-items:center;gap:10px}
+  .brand i{width:32px;height:32px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;font-style:normal;font-size:.8rem;display:grid;place-items:center;letter-spacing:.02em}
+  nav.links{display:flex;gap:18px;font-size:.86rem;font-weight:500;white-space:nowrap}
+  .brand{white-space:nowrap}
+  nav.links a{text-decoration:none;color:var(--muted);transition:color .2s}
+  nav.links a:hover{color:var(--accent)}
+  .controls{display:flex;gap:8px}
+  .btn-icon{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:12px;height:38px;min-width:38px;padding:0 12px;font:600 .82rem var(--sans);cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:.2s}
+  .btn-icon:hover{border-color:var(--accent);color:var(--accent)}
+  .lang-switch{display:inline-flex;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface);padding:3px;gap:2px}
+  .lang-switch button{border:0;background:none;color:var(--muted);font:700 .76rem var(--sans);padding:0 11px;height:30px;cursor:pointer;border-radius:9px}
+  .lang-switch button.active{background:var(--accent);color:#fff}
+  @media (max-width:1180px){nav.links{display:none}}
+
+  /* Hero */
+  .hero-bg{position:relative;overflow:hidden}
+  .hero-bg::before,.hero-bg::after{content:"";position:absolute;border-radius:50%;filter:blur(80px);opacity:.35;z-index:0;pointer-events:none}
+  .hero-bg::before{width:520px;height:520px;background:var(--accent);top:-220px;right:-120px}
+  .hero-bg::after{width:420px;height:420px;background:var(--accent-2);top:120px;right:240px;opacity:.18}
+  .hero{position:relative;z-index:1;padding:76px 24px 64px}
+  .hero-grid{display:grid;grid-template-columns:1.55fr 1fr;gap:48px;align-items:center}
+  @media (max-width:900px){.hero-grid{grid-template-columns:1fr}.hero-card{display:none}}
+  .badge{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow);color:var(--ink);font:600 .8rem var(--sans);padding:7px 14px 7px 8px;border-radius:999px;margin-bottom:26px}
+  .badge::before{content:"★";display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;font-size:.7rem}
+  h1{font-family:var(--head);font-size:clamp(2.6rem,6vw,4.2rem);line-height:1.02;font-weight:800;letter-spacing:-.035em}
+  .role{font-family:var(--head);font-weight:700;font-size:clamp(1.15rem,2.4vw,1.45rem);margin:14px 0 22px}
+  .role span{background:linear-gradient(100deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .intro{white-space:pre-line;max-width:640px;color:var(--muted);font-size:1.04rem}
+  .quick{display:flex;flex-wrap:wrap;gap:8px 22px;margin:26px 0;font-size:.9rem;color:var(--muted)}
+  .socials{display:flex;flex-wrap:wrap;gap:10px}
+  .pill{display:inline-flex;align-items:center;gap:8px;text-decoration:none;border:1px solid var(--line);background:var(--surface);padding:11px 18px;border-radius:12px;font-weight:600;font-size:.9rem;transition:.2s}
+  .pill:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+  .pill.primary{background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 8px 20px color-mix(in srgb,var(--accent) 35%,transparent)}
+  .pill.primary:hover{color:#fff;filter:brightness(1.08)}
+  .pill svg{width:16px;height:16px}
+  .pill.disabled{opacity:.6;pointer-events:none;cursor:default;border-style:dashed;background:transparent;color:var(--muted);box-shadow:none}
+
+  /* Tarjeta visual del hero */
+  .hero-card{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:30px;box-shadow:var(--shadow)}
+  .mono{width:96px;height:96px;border-radius:26px;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;font:800 2rem var(--head);display:grid;place-items:center;letter-spacing:-.02em;margin-bottom:20px;box-shadow:0 12px 30px color-mix(in srgb,var(--accent) 35%,transparent)}
+  .hero-card h3{font-family:var(--head);font-size:1.15rem;font-weight:800}
+  .hero-card .sub{color:var(--muted);font-size:.9rem;margin-bottom:18px}
+  .hc-row{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-top:1px solid var(--line);font-size:.88rem}
+  .hc-row span:first-child{color:var(--muted)}
+  .hc-row b{font-weight:600}
+  .open{display:inline-flex;align-items:center;gap:8px;margin-top:16px;background:color-mix(in srgb,#22c55e 14%,transparent);color:#16a34a;font-weight:600;font-size:.82rem;padding:7px 12px;border-radius:999px}
+  .open::before{content:"";width:8px;height:8px;border-radius:50%;background:#22c55e;animation:pulseG 2s infinite}
+  @keyframes pulseG{0%{box-shadow:0 0 0 0 rgba(34,197,94,.6)}70%{box-shadow:0 0 0 8px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
+
+  /* Áreas (big boxes) */
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:56px}
+  .stat{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);overflow:hidden;transition:.25s}
+  .stat::before{content:"";position:absolute;left:0;top:0;right:0;height:4px;background:linear-gradient(90deg,var(--accent),var(--accent-2))}
+  .stat:hover{transform:translateY(-4px)}
+  .stat b{display:block;font-family:var(--head);font-weight:800;font-size:2.2rem;line-height:1;color:var(--accent)}
+  .stat b.area{font-size:1.25rem;line-height:1.25;color:var(--ink)}
+  .stat > span{display:block;margin-top:8px;font-size:.9rem;color:var(--muted)}
+  .stat .ico{width:42px;height:42px;border-radius:12px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;margin-bottom:16px}
+  .stat .ico svg{width:20px;height:20px}
+  @media (max-width:760px){.stats{grid-template-columns:1fr}}
+
+  /* Secciones */
+  section{padding:72px 0}
+  section:nth-of-type(even){background:color-mix(in srgb,var(--surface) 55%,var(--bg))}
+  .sec-head{display:flex;flex-direction:column;gap:6px;margin-bottom:36px}
+  .sec-num{font-family:var(--mono);color:var(--accent-2);font-size:.78rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase}
+  h2{font-family:var(--head);font-size:clamp(1.8rem,3.6vw,2.4rem);font-weight:800;letter-spacing:-.025em}
+  .lead{white-space:pre-line;font-size:1.12rem;line-height:1.75;max-width:820px;color:var(--ink)}
+  .lead::first-line{font-weight:600}
+
+  /* Timeline */
+  .timeline{position:relative;padding-left:34px}
+  .timeline::before{content:"";position:absolute;left:9px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--accent),var(--accent-2))}
+  .job{position:relative;margin-bottom:22px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px 26px;box-shadow:var(--shadow)}
+  .job::before{content:"";position:absolute;left:-31px;top:28px;width:14px;height:14px;border-radius:50%;background:var(--surface);border:3px solid var(--accent)}
+  .job-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:6px 16px}
+  .job h3{font-family:var(--head);font-size:1.15rem;font-weight:700}
+  .company{color:var(--accent);font-weight:700;font-size:.95rem}
+  .dates{font-family:var(--mono);font-size:.76rem;color:var(--accent);background:var(--accent-soft);padding:4px 10px;border-radius:8px;white-space:nowrap}
+  .place{font-size:.84rem;color:var(--muted);margin-bottom:12px}
+  .job ul{padding-left:18px;color:var(--ink);font-size:.95rem}
+  .job li{margin:5px 0}
+  .job li::marker{color:var(--accent-2)}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+  .tag{font-size:.74rem;font-weight:600;padding:4px 10px;border-radius:8px;background:var(--accent-soft);color:var(--accent)}
+
+  /* Proyectos */
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);transition:.25s}
+  .card:hover{transform:translateY(-4px);border-color:color-mix(in srgb,var(--accent) 50%,var(--line))}
+  .card .kicker{font-family:var(--mono);font-size:.72rem;color:var(--accent-2);text-transform:uppercase;letter-spacing:.08em;font-weight:500}
+  .card h3{font-family:var(--head);font-size:1.2rem;font-weight:700;margin:8px 0 10px;line-height:1.3}
+  .card p{color:var(--muted);font-size:.93rem}
+  .card ul{padding-left:18px;color:var(--muted);font-size:.9rem;margin-top:10px}
+  .card li::marker{color:var(--accent-2)}
+  .metric{display:flex;gap:6px;margin:14px 0 0;flex-wrap:wrap}
+  .metric div{display:inline-flex;align-items:baseline;gap:5px;background:var(--accent-soft);border-radius:8px;padding:4px 10px}
+  .metric div b{font-family:var(--sans);font-weight:700;font-size:.82rem;color:var(--accent);line-height:1.4}
+  .metric div > span{font-size:.74rem;color:var(--accent);opacity:.8}
+  .center{text-align:center;margin-top:34px}
+
+  /* Educación */
+  .edu{list-style:none;display:grid;gap:12px}
+  .edu li{display:grid;grid-template-columns:84px 1fr;gap:18px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px 22px}
+  .edu .year{font-family:var(--head);font-size:1.25rem;color:var(--accent);font-weight:800}
+  .edu h3{font-size:1rem;font-weight:700;font-family:var(--head)}
+  .edu .inst{color:var(--muted);font-size:.88rem}
+  .edu .featured{border:0;background:linear-gradient(120deg,var(--accent),color-mix(in srgb,var(--accent) 55%,var(--accent-2)));color:#fff;padding:24px 22px;box-shadow:0 14px 34px color-mix(in srgb,var(--accent) 30%,transparent)}
+  .edu .featured .year,.edu .featured .inst{color:#fff}
+  .edu .featured .inst{opacity:.88}
+  .star{display:inline-block;font-size:.68rem;font-weight:700;background:#fff;color:var(--accent);padding:2px 8px;border-radius:6px;margin-left:8px;vertical-align:middle;text-transform:uppercase;letter-spacing:.04em}
+
+  /* Habilidades */
+  .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+  .skills > div{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+  .skills h3{font-family:var(--head);font-size:1rem;font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+  .skills h3::before{content:"";width:10px;height:10px;border-radius:3px;background:linear-gradient(135deg,var(--accent),var(--accent-2))}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{border:1px solid var(--line);background:var(--bg);padding:6px 12px;border-radius:10px;font-size:.84rem;font-weight:500;transition:.2s}
+  .chip:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
+  .langs{margin-top:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+  .lang{display:flex;justify-content:space-between;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px 20px}
+  .lang b{font-family:var(--head)}
+  .lang small{display:block;color:var(--muted);font-size:.8rem}
+  .dots{display:flex;gap:5px}
+  .dots i{width:10px;height:10px;border-radius:50%;background:var(--line)}
+  .dots i.on{background:linear-gradient(135deg,var(--accent),var(--accent-2))}
+
+  /* Contacto */
+  .contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}
+  .ccard{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px;text-decoration:none;display:block;transition:.2s;word-break:break-word}
+  a.ccard:hover{border-color:var(--accent);transform:translateY(-3px)}
+  .ccard .lbl{font-family:var(--mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:var(--accent-2)}
+  .ccard .val{font-weight:600;margin-top:4px;font-size:.93rem}
+  .copy{margin-top:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:8px;padding:5px 12px;font:600 .78rem var(--sans);cursor:pointer}
+  .copy:hover{border-color:var(--accent);color:var(--accent)}
+  .avail{grid-column:1/-1;background:linear-gradient(125deg,var(--navy),#312e81 60%,var(--accent));color:#fff;border:0;padding:30px}
+  .avail .lbl{color:var(--accent-2)}
+  .avail .val{font-family:var(--head);font-weight:800;font-size:1.45rem}
+  .avail p{opacity:.9;font-size:.92rem;margin-top:6px}
+  .avail .roles{margin:12px 0 14px}
+  .avail .roles .chip{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.22);color:#fff;font-size:.82rem}
+  .avail .roles .chip:hover{background:rgba(255,255,255,.2);color:#fff;border-color:#fff}
+  .pulse{display:inline-block;width:10px;height:10px;border-radius:50%;background:#22c55e;margin-right:10px;vertical-align:middle;animation:pulseG 2s infinite}
+
+  footer{padding:36px 0 50px;text-align:center;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line)}
+
+  /* Animaciones scroll */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+  .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:12px;font-size:.88rem;font-weight:500;transition:.3s;z-index:99}
+  .toast.show{transform:translateX(-50%) translateY(0)}
+
+  /* Impresión / PDF */
+  @media print{
+    :root{--bg:#fff;--surface:#fff;--ink:#111;--muted:#444;--line:#ddd;--accent:#4f46e5;--accent-2:#ff6b4a;--accent-soft:#eef0ff}
+    .topbar,.controls,.socials,.center,.copy,.toast,footer,.hero-card,.hero-bg::before,.hero-bg::after{display:none!important}
+    .hero-grid{grid-template-columns:1fr}
+    .reveal{opacity:1!important;transform:none!important}
+    body{font-size:10.5pt}
+    .hero{padding:10px 0 16px}
+    section{padding:16px 0;background:none!important}
+    .job,.card,.edu li,.lang,.ccard,.stat,.skills>div{break-inside:avoid;box-shadow:none}
+    .avail{background:#f3f4ff;color:#111}
+    .avail .roles .chip{background:#fff;color:#111;border-color:#ccc}
+    .edu .featured{background:#eef0ff;color:#111}
+    .edu .featured .year,.edu .featured .inst{color:#111}
+    .pulse,.open{display:none}
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a href="#top" class="brand"><i>MA</i>Milena Aguilera</a>
+    <nav class="links">
+      <a href="#perfil" data-i18n="nav.profile"></a>
+      <a href="#experiencia" data-i18n="nav.experience"></a>
+      <a href="#proyectos" data-i18n="nav.projects"></a>
+      <a href="#educacion" data-i18n="nav.education"></a>
+      <a href="#habilidades" data-i18n="nav.skills"></a>
+      <a href="#contacto" data-i18n="nav.contact"></a>
+    </nav>
+    <div class="controls">
+      <div class="lang-switch" role="group" aria-label="Idioma / Language">
+        <button data-lang="es">ES</button>
+        <button data-lang="en">EN</button>
+      </div>
+      <button class="btn-icon" id="themeBtn" aria-label="Tema"></button>
+      <button class="btn-icon" id="printBtn"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg><span data-i18n="ui.print"></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <div class="hero-bg"><div class="wrap hero">
+    <div class="hero-grid"><div>
+    <div class="badge reveal" data-i18n="hero.badge"></div>
+    <h1 class="reveal">Milena Aguilera<br>Castroverde</h1>
+    <p class="role reveal"><span data-i18n="hero.role"></span></p>
+    <p class="intro reveal" data-i18n="hero.intro"></p>
+    <div class="quick reveal">
+      <span>📍 <span data-i18n="contact.locationVal"></span></span>
+      <span>✉️ milena.aguileracastroverde@gmail.com</span>
+      <span>📞 +34 672 024 176</span>
+    </div>
+    <div class="socials reveal">
+      <a class="pill primary" id="lnk-linkedin" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn</a>
+      <a class="pill" id="lnk-github" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6 0-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8 0 3.2.9.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1 .9 2.2v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3"/></svg>GitHub</a>
+      <a class="pill" id="lnk-portfolio" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg><span data-i18n="ui.portfolio"></span></a>
+    </div>
+
+    </div>
+    <aside class="hero-card reveal">
+      <div class="mono">MA</div>
+      <h3>Milena Aguilera Castroverde</h3>
+      <div class="sub" data-i18n="hero.role"></div>
+      <div class="hc-row"><span data-i18n="contact.location"></span><b data-i18n="contact.locationVal"></b></div>
+      <div class="hc-row"><span data-i18n="hc.focus"></span><b>Marketing · CRM · Data</b></div>
+      <div class="hc-row"><span data-i18n="hc.langs"></span><b>ES · EN · CA</b></div>
+      <div class="hc-row"><span data-i18n="hc.mode"></span><b data-i18n="hc.modeVal"></b></div>
+      <span class="open" data-i18n="contact.avail"></span>
+    </aside>
+    </div>
+    <div class="stats reveal">
+      <div class="stat"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-8-8 18-2-8-8-2z"/></svg></div><b class="area">Marketing &amp; CRM</b><span data-i18n="stats.mkt"></span></div>
+      <div class="stat"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M8 2v4M16 2v4M3 10h18M8 15l2 2 4-4"/></svg></div><b class="area">Project Management</b><span data-i18n="stats.pm"></span></div>
+      <div class="stat"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 6-7"/></svg></div><b class="area">Data &amp; AI</b><span data-i18n="stats.data"></span></div>
+    </div>
+  </div></div>
+
+  <!-- PERFIL -->
+  <section id="perfil">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="sec-num">01</span><h2 data-i18n="nav.profile"></h2></div>
+      <p class="lead reveal" data-i18n="profile.text"></p>
+    </div>
+  </section>
+
+  <!-- EXPERIENCIA -->
+  <section id="experiencia">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="sec-num">02</span><h2 data-i18n="nav.experience"></h2></div>
+      <div class="timeline">
+        <article class="job reveal">
+          <div class="job-head"><h3 data-i18n="exp1.title"></h3><span class="dates" data-i18n="exp1.dates"></span></div>
+          <div class="company">Adalab</div>
+          <div class="place" data-i18n="exp1.place"></div>
+          <ul data-i18n-list="exp1.items"></ul>
+          <div class="tags"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Power BI</span><span class="tag">Dashboards</span><span class="tag">KPIs</span></div>
+        </article>
+        <article class="job reveal">
+          <div class="job-head"><h3 data-i18n="exp2.title"></h3><span class="dates" data-i18n="exp2.dates"></span></div>
+          <div class="company">Schaeffler</div>
+          <div class="place" data-i18n="exp2.place"></div>
+          <ul data-i18n-list="exp2.items"></ul>
+          <div class="tags"><span class="tag">Salesforce</span><span class="tag">Funnel</span><span class="tag">ROI</span><span class="tag" data-i18n="tag.events"></span><span class="tag">Reporting</span></div>
+        </article>
+        <article class="job reveal">
+          <div class="job-head"><h3 data-i18n="exp3.title"></h3><span class="dates">2012 – 2019</span></div>
+          <div class="company">SGS Tecnos</div>
+          <div class="place" data-i18n="exp3.place"></div>
+          <ul data-i18n-list="exp3.items"></ul>
+          <div class="tags"><span class="tag" data-i18n="tag.pm"></span><span class="tag">Stakeholders</span><span class="tag">KPIs</span><span class="tag">Testing</span><span class="tag" data-i18n="tag.docs"></span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROYECTOS -->
+  <section id="proyectos">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="sec-num">03</span><h2 data-i18n="nav.projects"></h2></div>
+      <div class="cards">
+        <article class="card reveal">
+          <div class="kicker" data-i18n="proj1.kicker"></div>
+          <h3 data-i18n="proj1.title"></h3>
+          <p data-i18n="proj1.desc"></p>
+          <ul data-i18n-list="proj1.items"></ul>
+          <div class="tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Open Data</span><span class="tag" data-i18n="tag.modeling"></span></div>
+        </article>
+        <article class="card reveal">
+          <div class="kicker" data-i18n="proj2.kicker"></div>
+          <h3 data-i18n="proj2.title"></h3>
+          <p data-i18n="proj2.desc"></p>
+          <ul data-i18n-list="proj2.items"></ul>
+          <div class="metric">
+            <div><b><span class="count" data-to="34.4" data-dec="1">0</span> M€</b><span data-i18n="proj2.m1"></span></div>
+            <div><b>+<span class="count" data-to="60">0</span>%</b><span data-i18n="proj2.m2"></span></div>
+            <div><b><span class="count" data-to="144">0</span> l/s</b><span data-i18n="proj2.m3"></span></div>
+          </div>
+        </article>
+      </div>
+      <div class="center reveal"><a class="pill primary" id="lnk-portfolio2" target="_blank" rel="noopener" data-i18n="ui.seePortfolio"></a></div>
+    </div>
+  </section>
+
+  <!-- EDUCACIÓN -->
+  <section id="educacion">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="sec-num">04</span><h2 data-i18n="nav.education"></h2></div>
+      <ul class="edu">
+        <li class="featured reveal"><span class="year">2026</span><div><h3><span data-i18n="edu1.title"></span><span class="star" data-i18n="edu.featured"></span></h3><div class="inst" data-i18n="edu1.inst"></div></div></li>
+        <li class="reveal"><span class="year">2023</span><div><h3 data-i18n="edu4.title"></h3><div class="inst">OBS Business School / Universitat de Barcelona · Barcelona</div></div></li>
+        <li class="reveal"><span class="year">2020</span><div><h3 data-i18n="edu5.title"></h3><div class="inst">Coderhouse · Buenos Aires</div></div></li>
+        <li class="reveal"><span class="year">2018</span><div><h3 data-i18n="edu3.title"></h3><div class="inst">ESIC Business &amp; Marketing School · Barcelona</div></div></li>
+        <li class="reveal"><span class="year">2016</span><div><h3 data-i18n="edu2.title"></h3><div class="inst">IDEP Barcelona · Barcelona</div></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- HABILIDADES -->
+  <section id="habilidades">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="sec-num">05</span><h2 data-i18n="nav.skills"></h2></div>
+      <div class="skills">
+        <div class="reveal"><h3 data-i18n="sk.data"></h3><div class="chips"><span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">Matplotlib</span><span class="chip">SQL / MySQL</span><span class="chip">ETL</span><span class="chip">Jupyter Notebook</span><span class="chip">Seaborn</span><span class="chip">Selenium</span><span class="chip">Beautiful Soup</span><span class="chip">APIs</span></div></div>
+        <div class="reveal"><h3 data-i18n="sk.bi"></h3><div class="chips"><span class="chip">Power BI</span><span class="chip">DAX</span><span class="chip">Tableau</span><span class="chip">Excel</span><span class="chip">Dashboards</span><span class="chip">KPI Tracking</span></div></div>
+        <div class="reveal"><h3 data-i18n="sk.tools"></h3><div class="chips"><span class="chip">Salesforce CRM</span><span class="chip">Power BI</span><span class="chip">SQL</span><span class="chip">Python</span><span class="chip">Excel</span><span class="chip">Trello</span><span class="chip">Jira</span><span class="chip">Adobe Creative Suite</span><span class="chip">Canva</span><span class="chip">Figma</span><span class="chip">Google Analytics</span><span class="chip" data-i18n="sk.aiTools"></span></div></div>
+        <div class="reveal"><h3 data-i18n="sk.biz"></h3><div class="chips" data-i18n-chips="sk.bizList"></div></div>
+        <div class="reveal"><h3 data-i18n="sk.ways"></h3><div class="chips" data-i18n-chips="sk.waysList"></div></div>
+      </div>
+      <div class="langs">
+        <div class="lang reveal"><div><b data-i18n="lang.es"></b><small data-i18n="lang.native"></small></div><div class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div></div>
+        <div class="lang reveal"><div><b data-i18n="lang.en"></b><small data-i18n="lang.c1"></small></div><div class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div></div>
+        <div class="lang reveal"><div><b data-i18n="lang.ca"></b><small data-i18n="lang.b2"></small></div><div class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="sec-num">06</span><h2 data-i18n="nav.contact"></h2></div>
+      <div class="contact">
+        <div class="ccard reveal"><div class="lbl" data-i18n="contact.email"></div><div class="val" id="emailVal">milena.aguileracastroverde@gmail.com</div><button class="copy" id="copyBtn" data-i18n="ui.copy"></button></div>
+        <a class="ccard reveal" href="tel:+34672024176"><div class="lbl" data-i18n="contact.phone"></div><div class="val">+34 672 024 176</div></a>
+        <div class="ccard reveal"><div class="lbl" data-i18n="contact.location"></div><div class="val" data-i18n="contact.locationVal"></div></div>
+        <a class="ccard reveal" id="lnk-linkedin2" target="_blank" rel="noopener"><div class="lbl">LinkedIn</div><div class="val">/in/milena-aguilera-castroverde</div></a>
+        <a class="ccard reveal" id="lnk-github2" target="_blank" rel="noopener"><div class="lbl">GitHub</div><div class="val" id="ghHandle"></div></a>
+        <div class="ccard avail reveal"><div class="lbl" data-i18n="contact.availLbl"></div><div class="val"><span class="pulse"></span><span data-i18n="contact.avail"></span></div><p data-i18n="contact.availText"></p><div class="chips roles" data-i18n-chips="contact.roles"></div><p data-i18n="contact.availMode"></p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">© <span id="year"></span> Milena Aguilera Castroverde · <span data-i18n="ui.footer"></span></div></footer>
+<div class="toast" id="toast"></div>
+
+<script>
+/* ====== Enlaces: actualiza aquí GitHub y portafolio ====== */
+const LINKS = {
+  linkedin:  "https://www.linkedin.com/in/milena-aguilera-castroverde",
+  github:    "https://github.com/milenaaguileracastroverde-star",
+  portfolio: ""  // ← pega aquí la URL del portafolio cuando esté listo (vacío = "Próximamente")
+};
+
+/* ====== Diccionario de traducción ====== */
+const I18N = {
+  es: {
+    "nav.profile":"Perfil profesional","nav.experience":"Experiencia","nav.projects":"Proyectos","nav.education":"Educación y certificaciones","nav.skills":"Habilidades","nav.contact":"Contacto",
+    "ui.print":"PDF","ui.portfolio":"Portafolio","ui.portfolioSoon":"Portafolio · Próximamente","ui.seePortfolio":"Ver portafolio completo →","ui.seePortfolioSoon":"Portafolio completo · Próximamente","ui.copy":"Copiar correo","ui.copied":"Correo copiado ✓","ui.footer":"CV interactivo","ui.dark":"🌙","ui.light":"☀️",
+    "hero.badge":"Bootcamp Data Analytics & IA · Adalab · 638 h",
+    "hero.role":"Project Manager | Data Analyst | Marketing & Business",
+    "hero.intro":"Profesional con más de 10 años de experiencia en marketing, comunicación y coordinación de proyectos en sectores como industria, farmacéutico y servicios. Combino una visión estratégica de negocio con experiencia práctica en campañas, CRM, gestión de stakeholders y desarrollo de iniciativas de comunicación.\n\nHe ampliado mi perfil con formación en Data Analytics e Inteligencia Artificial, incorporando herramientas como SQL, Python y Power BI para transformar datos en información útil y apoyar la toma de decisiones. Me caracterizo por conectar personas, procesos y tecnología, con capacidad de adaptación, autonomía y orientación a resultados.",
+    "stats.hours":"horas de formación intensiva 100% hands-on en Data Analytics & IA","stats.mkt":"Campañas, Salesforce, automatización y comunicación.","stats.pm":"Coordinación transversal, gestión de stakeholders y seguimiento de proyectos.","stats.data":"Análisis de datos, SQL, Python, Power BI e inteligencia artificial.",
+    "profile.text":"Profesional de marketing y comunicación con más de 10 años de experiencia en distintos sectores y entornos de trabajo. A lo largo de mi trayectoria he participado en campañas, proyectos y eventos, coordinando equipos y conectando diferentes áreas para que las ideas se conviertan en acciones concretas.\n\nMe gusta entender cómo funciona el negocio, encontrar oportunidades de mejora y trabajar con una visión global. En los últimos años he ampliado mi perfil hacia la gestión de proyectos, el análisis de datos y la inteligencia artificial, incorporando nuevas herramientas y conocimientos que me permiten trabajar con mayor autonomía y tomar decisiones basadas en datos. Me considero una persona resolutiva, curiosa y con facilidad para adaptarme a nuevos retos.",
+    "exp1.title":"Proyectos de Aprendizaje en Analítica de Datos","exp1.dates":"Ene 2026 – May 2026","exp1.place":"Madrid, España",
+    "exp1.items":["Desarrollo de scripts en Python para automatización, procesamiento de datos y resolución de problemas.","Creación de consultas SQL para filtrado, joins, agregaciones y extracción de datos.","Ejercicios de limpieza, transformación, validación y visualización de datos.","Creación de dashboards e informes enfocados en el monitoreo de KPIs y el análisis de negocio."],
+    "exp2.title":"Especialista en Marketing y Comunicación","exp2.dates":"Ene 2023 – Feb 2024","exp2.place":"Barcelona, España (Híbrido)",
+    "exp2.items":["Gestión y análisis de leads en Salesforce, apoyando el seguimiento del funnel comercial y la visibilidad del pipeline.","Análisis de KPIs de campañas y eventos para optimizar el rendimiento y el ROI.","Organización de eventos corporativos, midiendo su impacto, engagement y resultados.","Coordinación con ventas para identificar oportunidades de negocio basadas en insights de datos.","Elaboración de informes y dashboards para la toma de decisiones comerciales y de marketing."],
+    "exp3.title":"Especialista en Marketing y Comunicación","exp3.place":"Barcelona, España (Híbrido)",
+    "exp3.items":["Coordinación de proyectos entre múltiples departamentos en un entorno corporativo internacional.","Gestión de cronogramas, stakeholders, proveedores, presupuestos y entregables.","Generación de informes, seguimiento de KPIs y análisis de métricas para la toma de decisiones.","Validación de la precisión de los datos y mantenimiento de la documentación y procedimientos internos.","Participación en testing, implementación e iniciativas de mejora continua.","Organización de eventos corporativos de gran escala: logística, proveedores y comunicaciones."],
+    "tag.events":"Eventos","tag.pm":"Gestión de proyectos","tag.docs":"Documentación","tag.modeling":"Modelado de datos",
+    "proj1.kicker":"Power BI · Datos abiertos","proj1.title":"Concurso de Datos Abiertos del Ayuntamiento de Madrid",
+    "proj1.desc":"Solución integral en Power BI para analizar conjuntos de datos urbanos del portal de Datos Abiertos de Madrid.",
+    "proj1.items":["Modelos de datos complejos y dashboards interactivos para detectar tendencias socioeconómicas.","Medidas avanzadas de DAX y limpieza de registros municipales en bruto.","Recomendaciones de políticas públicas basadas en datos."],
+    "proj2.kicker":"Tesis de Máster · Project Management","proj2.title":"Modernización de PTAS y reutilización de aguas residuales",
+    "proj2.desc":"Propuesta integral de ingeniería para modernizar la PTAS Placillas (Chile) bajo un modelo de economía circular, con doble uso para riego y consumo humano.",
+    "proj2.m1":"presupuesto","proj2.m2":"capacidad","proj2.m3":"procesamiento",
+    "proj2.items":["Transición a lodos activos avanzados y biofiltración.","Energía fotovoltaica y recuperación de agua.","Ciclo de vida EPC, optimización de presupuesto y cumplimiento ambiental."],
+    "edu.featured":"Destacado",
+    "edu1.title":"Bootcamp en Data Analytics & IA (638 h, tiempo completo)","edu1.inst":"Adalab · Madrid — Python, SQL, ETL, Power BI, Tableau, Git y GitHub, APIs, Agile/Scrum",
+    "edu2.title":"Posgrado en Diseño Gráfico","edu3.title":"Programa en Marketing Digital","edu4.title":"Máster en Project Management","edu5.title":"Bootcamp en Diseño UX/UI",
+    "sk.data":"Análisis y programación","sk.bi":"Visualización y BI","sk.tools":"Herramientas","sk.aiTools":"Herramientas de IA","sk.biz":"Negocio y gestión","sk.ways":"Forma de trabajar",
+    "sk.bizList":["Gestión y coordinación de proyectos","Visión estratégica y orientación al negocio","Gestión de stakeholders","Coordinación transversal de equipos","Optimización de procesos","Gestión de CRM y procesos comerciales","Análisis de KPIs y toma de decisiones","Planificación y ejecución de iniciativas"],
+    "sk.waysList":["Agile","Scrum","Trabajo en remoto","Trabajo en equipo","Autoaprendizaje","Comunicación efectiva"],
+    "lang.es":"Español","lang.en":"Inglés","lang.ca":"Catalán","lang.b2":"B2 · Intermedio alto","lang.native":"Nativo","lang.c1":"C1 · Competencia profesional completa",
+    "contact.email":"Correo","contact.phone":"Teléfono","contact.location":"Ubicación","contact.locationVal":"Barcelona, España",
+    "contact.availLbl":"Disponibilidad","hc.focus":"Enfoque","hc.langs":"Idiomas","hc.mode":"Modalidad","hc.modeVal":"Presencial · Híbrido · Remoto","contact.avail":"Abierta a nuevas oportunidades","contact.availText":"Roles de interés:","contact.availMode":"Presencial, híbrido o remoto.","contact.roles":["Especialista CRM", "Marketing Operations", "Marketing Analyst", "CRM Analyst", "Campaign Specialist", "Marketing Automation", "Business Analyst", "Salesforce Functional Consultant", "Project Coordinator", "Customer Experience Analyst", "Sales Operations / Revenue Operations", "Data Analyst Junior"]
+  },
+  en: {
+    "nav.profile":"Professional profile","nav.experience":"Experience","nav.projects":"Projects","nav.education":"Education & certifications","nav.skills":"Skills","nav.contact":"Contact",
+    "ui.print":"PDF","ui.portfolio":"Portfolio","ui.portfolioSoon":"Portfolio · Coming soon","ui.seePortfolio":"See full portfolio →","ui.seePortfolioSoon":"Full portfolio · Coming soon","ui.copy":"Copy email","ui.copied":"Email copied ✓","ui.footer":"Interactive CV","ui.dark":"🌙","ui.light":"☀️",
+    "hero.badge":"Data Analytics & AI Bootcamp · Adalab · 638 h",
+    "hero.role":"Project Manager | Data Analyst | Marketing & Business",
+    "hero.intro":"Professional with over 10 years of experience in marketing, communications and project coordination across sectors such as industry, pharmaceuticals and services. I combine a strategic business vision with hands-on experience in campaigns, CRM, stakeholder management and the development of communication initiatives.\n\nI have expanded my profile with training in Data Analytics and Artificial Intelligence, adding tools such as SQL, Python and Power BI to turn data into useful information and support decision-making. I am known for connecting people, processes and technology, with adaptability, autonomy and a results-driven mindset.",
+    "stats.hours":"hours of intensive, 100% hands-on Data Analytics & AI training","stats.mkt":"Campaigns, Salesforce, automation and communications.","stats.pm":"Cross-functional coordination, stakeholder management and project tracking.","stats.data":"Data analysis, SQL, Python, Power BI and artificial intelligence.",
+    "profile.text":"Marketing and communications professional with over 10 years of experience across different sectors and work environments. Throughout my career I have taken part in campaigns, projects and events, coordinating teams and connecting different areas so that ideas turn into concrete actions.\n\nI enjoy understanding how a business works, spotting opportunities for improvement and working with a big-picture view. In recent years I have broadened my profile towards project management, data analysis and artificial intelligence, adding new tools and knowledge that allow me to work more autonomously and make data-driven decisions. I see myself as resourceful, curious and quick to adapt to new challenges.",
+    "exp1.title":"Data Analytics Learning Projects","exp1.dates":"Jan 2026 – May 2026","exp1.place":"Madrid, Spain",
+    "exp1.items":["Built Python scripts for automation, data processing and problem solving.","Wrote SQL queries for filtering, joins, aggregations and data extraction.","Carried out data cleaning, transformation, validation and visualisation exercises.","Created dashboards and reports focused on KPI monitoring and business analysis."],
+    "exp2.title":"Marketing & Communications Specialist","exp2.dates":"Jan 2023 – Feb 2024","exp2.place":"Barcelona, Spain (Hybrid)",
+    "exp2.items":["Managed and analysed leads in Salesforce, supporting sales-funnel tracking and pipeline visibility.","Analysed campaign and event KPIs to optimise performance and ROI.","Organised corporate events, measuring their impact, engagement and results.","Worked with sales teams to identify business opportunities from data insights.","Produced reports and dashboards to support sales and marketing decisions."],
+    "exp3.title":"Marketing & Communications Specialist","exp3.place":"Barcelona, Spain (Hybrid)",
+    "exp3.items":["Coordinated cross-departmental projects in an international corporate environment.","Managed schedules, stakeholders, suppliers, budgets and project deliverables.","Produced reports, tracked KPIs and analysed metrics to support business decisions.","Validated data accuracy and maintained internal documentation and procedures.","Took part in testing, implementation and continuous-improvement initiatives.","Organised large-scale corporate events: logistics, suppliers and communications."],
+    "tag.events":"Events","tag.pm":"Project management","tag.docs":"Documentation","tag.modeling":"Data modelling",
+    "proj1.kicker":"Power BI · Open data","proj1.title":"Madrid City Council Open Data Challenge",
+    "proj1.desc":"End-to-end Power BI solution analysing urban datasets from Madrid's Open Data portal.",
+    "proj1.items":["Complex data models and interactive dashboards to surface key socioeconomic trends.","Advanced DAX measures and cleaning of raw municipal records.","Data-driven public policy recommendations."],
+    "proj2.kicker":"Master's thesis · Project Management","proj2.title":"Wastewater plant modernisation & water reuse",
+    "proj2.desc":"Comprehensive engineering proposal to modernise the Placillas WWTP (Chile) under a circular-economy model, with dual use for irrigation and human consumption.",
+    "proj2.m1":"budget","proj2.m2":"capacity","proj2.m3":"throughput",
+    "proj2.items":["Shift to advanced activated sludge and biofiltration.","Solar PV integration and water recovery.","Full EPC life-cycle planning, budget optimisation and environmental compliance."],
+    "edu.featured":"Featured",
+    "edu1.title":"Data Analytics & AI Bootcamp (638 h, full-time)","edu1.inst":"Adalab · Madrid — Python, SQL, ETL, Power BI, Tableau, Git & GitHub, APIs, Agile/Scrum",
+    "edu2.title":"Postgraduate Diploma in Graphic Design","edu3.title":"Digital Marketing Programme","edu4.title":"Master's in Project Management","edu5.title":"UX/UI Design Bootcamp",
+    "sk.data":"Analysis & programming","sk.bi":"Visualisation & BI","sk.tools":"Tools","sk.aiTools":"AI tools","sk.biz":"Business & management","sk.ways":"Ways of working",
+    "sk.bizList":["Project management & coordination","Strategic vision & business focus","Stakeholder management","Cross-functional team coordination","Process optimisation","CRM & sales process management","KPI analysis & decision-making","Initiative planning & execution"],
+    "sk.waysList":["Agile","Scrum","Remote work","Teamwork","Self-learning","Effective communication"],
+    "lang.es":"Spanish","lang.en":"English","lang.ca":"Catalan","lang.b2":"B2 · Upper intermediate","lang.native":"Native","lang.c1":"C1 · Full professional proficiency",
+    "contact.email":"Email","contact.phone":"Phone","contact.location":"Location","contact.locationVal":"Barcelona, Spain",
+    "contact.availLbl":"Availability","hc.focus":"Focus","hc.langs":"Languages","hc.mode":"Work mode","hc.modeVal":"On-site · Hybrid · Remote","contact.avail":"Open to new opportunities","contact.availText":"Roles I'm interested in:","contact.availMode":"On-site, hybrid or remote.","contact.roles":["CRM Specialist", "Marketing Operations", "Marketing Analyst", "CRM Analyst", "Campaign Specialist", "Marketing Automation", "Business Analyst", "Salesforce Functional Consultant", "Project Coordinator", "Customer Experience Analyst", "Sales Operations / Revenue Operations", "Data Analyst Junior"]
+  }
+};
+
+let lang = localStorage.getItem("cv-lang") || ((navigator.language||"es").startsWith("es") ? "es" : "en");
+
+function applyLang(l){
+  lang = l; const d = I18N[l];
+  document.documentElement.lang = l;
+  document.querySelectorAll("[data-i18n]").forEach(el => { const v = d[el.dataset.i18n]; if (v !== undefined) el.textContent = v; });
+  document.querySelectorAll("[data-i18n-list]").forEach(el => { el.innerHTML = ""; (d[el.dataset.i18nList]||[]).forEach(t => { const li=document.createElement("li"); li.textContent=t; el.appendChild(li); }); });
+  document.querySelectorAll("[data-i18n-chips]").forEach(el => { el.innerHTML = ""; (d[el.dataset.i18nChips]||[]).forEach(t => { const s=document.createElement("span"); s.className="chip"; s.textContent=t; el.appendChild(s); }); });
+  document.querySelectorAll(".lang-switch button").forEach(b => b.classList.toggle("active", b.dataset.lang === l));
+  updateThemeBtn();
+  try { localStorage.setItem("cv-lang", l); } catch(e){}
+}
+document.querySelectorAll(".lang-switch button").forEach(b => b.addEventListener("click", () => applyLang(b.dataset.lang)));
+
+/* Tema claro/oscuro */
+const root = document.documentElement;
+function isDark(){ const t = root.dataset.theme; return t ? t === "dark" : matchMedia("(prefers-color-scheme: dark)").matches; }
+function updateThemeBtn(){ document.getElementById("themeBtn").textContent = isDark() ? I18N[lang]["ui.light"] : I18N[lang]["ui.dark"]; }
+try { const saved = localStorage.getItem("cv-theme"); if (saved) root.dataset.theme = saved; } catch(e){}
+document.getElementById("themeBtn").addEventListener("click", () => {
+  root.dataset.theme = isDark() ? "light" : "dark";
+  try { localStorage.setItem("cv-theme", root.dataset.theme); } catch(e){}
+  updateThemeBtn();
+});
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change", updateThemeBtn);
+
+/* Enlaces */
+[["lnk-linkedin","linkedin"],["lnk-linkedin2","linkedin"],["lnk-github","github"],["lnk-github2","github"],["lnk-portfolio","portfolio"],["lnk-portfolio2","portfolio"]]
+  .forEach(([id,k]) => { const el=document.getElementById(id);
+    if (LINKS[k]) el.href = LINKS[k];
+    else { el.classList.add("disabled"); el.removeAttribute("target"); el.setAttribute("aria-disabled","true"); el.title = "Próximamente / Coming soon";
+      const t = el.matches("[data-i18n]") ? el : el.querySelector("[data-i18n]"); if (t) t.dataset.i18n += "Soon"; } });
+document.getElementById("ghHandle").textContent = LINKS.github.replace(/^https?:\/\/(www\.)?/,"");
+document.getElementById("year").textContent = new Date().getFullYear();
+
+/* Copiar correo */
+function toast(msg){ const t=document.getElementById("toast"); t.textContent=msg; t.classList.add("show"); setTimeout(()=>t.classList.remove("show"),1800); }
+document.getElementById("copyBtn").addEventListener("click", async () => {
+  const email = document.getElementById("emailVal").textContent;
+  try { await navigator.clipboard.writeText(email); }
+  catch(e){ const ta=document.createElement("textarea"); ta.value=email; document.body.appendChild(ta); ta.select(); document.execCommand("copy"); ta.remove(); }
+  toast(I18N[lang]["ui.copied"]);
+});
+
+/* Imprimir */
+document.getElementById("printBtn").addEventListener("click", () => {
+  document.querySelectorAll(".count").forEach(finishCount);
+  window.print();
+});
+
+/* Contadores */
+function finishCount(el){ const dec=+(el.dataset.dec||0); el.textContent = (+el.dataset.to).toLocaleString(lang==="es"?"es-ES":"en-GB",{minimumFractionDigits:dec,maximumFractionDigits:dec}); el.dataset.done="1"; }
+function runCount(el){
+  if (el.dataset.done) return; el.dataset.done="1";
+  const to=+el.dataset.to, dec=+(el.dataset.dec||0), dur=1400, start=performance.now();
+  const fmt = v => v.toLocaleString(lang==="es"?"es-ES":"en-GB",{minimumFractionDigits:dec,maximumFractionDigits:dec});
+  (function step(now){ const p=Math.min((now-start)/dur,1), e=1-Math.pow(1-p,3); el.textContent=fmt(to*e); if(p<1) requestAnimationFrame(step); })(start);
+}
+
+/* Animaciones al hacer scroll */
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+if ("IntersectionObserver" in window && !reduce){
+  const io = new IntersectionObserver(entries => entries.forEach(en => {
+    if (!en.isIntersecting) return;
+    en.target.classList.add("in");
+    en.target.querySelectorAll(".count").forEach(runCount);
+    io.unobserve(en.target);
+  }), {threshold:.12});
+  document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+} else {
+  document.querySelectorAll(".reveal").forEach(el => el.classList.add("in"));
+  document.querySelectorAll(".count").forEach(finishCount);
+}
+
+applyLang(lang);
+</script>
+</body>
+</html>
